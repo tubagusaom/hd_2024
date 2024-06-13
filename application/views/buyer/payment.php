@@ -56,7 +56,7 @@
 
         <ul id="header" class="list-group">
           <li class="list-group-item" style="cursor:pointer;">
-            <div id="qr-hd" class="" data-toggle="modal" data-target=".shop-pembayaran-modal" data-dismiss="modal" aria-label="Close">>
+            <div id="qr-hd" class="" data-toggle="modal" data-target=".shop-pembayaran-modal" data-dismiss="modal" aria-label="Close">
               <img src="<?=base_url()?>assets/img/logo_bank/qris-hd.png" style="width:40px;" alt="homedepo QR">
               <label style="padding-left:20px;cursor:pointer;">
                 Homedepo QRIS
