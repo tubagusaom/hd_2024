@@ -9,8 +9,9 @@
             $this->server_domain = 'https://api.xendit.co';
             // $this->secret_api_key = $options['secret_api_key'];
             // api live
-            $this->secret_api_key = 'xnd_production_ccqx8StHJMxybLlZ5U8ojSL0mAwirhOnBhv8ZhVz8igTfFdzcXgVqFz4JXtp0g';
-
+            $this->secret_api_key = 'xnd_public_production_vr9SFhto0C96YKhd7PoTwfJE2gBxawkbaRyrtX8NUVIyzAOAdkkFXPYd419txnd_production_TtjkJnt7WUzbM6hQjaE8DxOASTvGUZtQcFPz6rQIwFQTVAcoox0e1mtfKX12jV';
+            // $this->secret_api_key = 'xnd_public_production_vr9SFhto0C96YKhd7PoTwfJE2gBxawkbaRyrtX8NUVIyzAOAdkkFXPYd419t';
+            
             // api test
             // $this->secret_api_key = 'xnd_development_b6zpvplD066MyTLCadSn8pPJKJiVEntqTF2k3wQtawDBDW3Y6UfXHf7BCHBRod';
         }

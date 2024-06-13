@@ -143,7 +143,6 @@ class Buyer extends MY_Controller {
       $data['product_favorite'] = $this->welcome_model->product_favorite($id_member);
 
 
-
       // $data['grand_total'] = $this->input->post('grand_total');
       $data['check_toko'] = $this->input->post('check_toko');
       $id_toko = $data['check_toko'];
@@ -433,7 +432,6 @@ class Buyer extends MY_Controller {
       // foreach ($keranjang_get_member as $key => $get_keranjang) {
       //   $data['total_keranjang'] += $get_keranjang->jumlah_product;
       // }
-
 
 
 

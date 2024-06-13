@@ -52,6 +52,19 @@
 
       <div class="modal-body">
 
+        <p>QRIS</p>
+
+        <ul id="header" class="list-group">
+          <li class="list-group-item" style="cursor:pointer;">
+            <div id="qr-hd" class="" data-toggle="modal" data-target=".shop-pembayaran-modal" data-dismiss="modal" aria-label="Close">>
+              <img src="<?=base_url()?>assets/img/logo_bank/qris-hd.png" style="width:40px;" alt="homedepo QR">
+              <label style="padding-left:20px;cursor:pointer;">
+                Homedepo QRIS <span class="tip tip-dark">popular</span>
+              </label>
+            </div>
+          </li>
+        </ul>
+
         <p>Transfer Virtual Account</p>
 
         <ul class="list-group">
@@ -169,10 +182,28 @@ $(document).ready(function(){
     return true;
   }
 
+  // QRIS
   // MANDIRI
   // BNI
   // PERMATA
   // BRI
+
+  $("#qr-hd").click(function(){
+
+  // alert('Mandiri');
+
+  var ketmetode = "";
+  ketmetode += "Silahkan lakukan pembayaran ke";
+  ketmetode += "<p class='mb-0'><b>Homedepo QRIS</b></p>";
+
+  ketmetode += "<p class='mb-0'>Klik <font style='color:red'> Bayar </font> untuk mendapatkan kode QRIS</p>";
+
+
+  $("#metodeBayar").html(ketmetode);
+  $("#metodeAtm").val('QRIS');
+  $(".notivBayar").html('');
+
+  });
 
   $("#va-mandiri").click(function(){
 
