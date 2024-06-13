@@ -59,19 +59,17 @@
             <div id="qr-hd" class="" data-toggle="modal" data-target=".shop-pembayaran-modal" data-dismiss="modal" aria-label="Close">>
               <img src="<?=base_url()?>assets/img/logo_bank/qris-hd.png" style="width:40px;" alt="homedepo QR">
               <label style="padding-left:20px;cursor:pointer;">
-                Homedepo QRIS <span class="tip tip-dark">popular</span>
+                Homedepo QRIS
+                <!-- <span class="tip tip-dark">recommen</span> -->
               </label>
             </div>
           </li>
         </ul>
 
-        <p>Transfer Virtual Account</p>
+        <!-- <p>Transfer Virtual Account</p>
 
         <ul class="list-group">
           <li  class="list-group-item" style="cursor:pointer;">
-            <!-- <div id="" class="">
-              Xendit Integrated :<b style="color:red;"> Lose Connection</b>
-            </div> -->
 
             <div id="va-mandiri" class="" data-toggle="modal" data-target=".shop-pembayaran-modal" data-dismiss="modal" aria-label="Close">
               <img src="<?=base_url()?>assets/img/logo_bank/logo-mandiri.png" style="width:40px;" alt="homedepo mandiri va">
@@ -122,7 +120,7 @@
               </label>
             </div>
           </li>
-        </ul>
+        </ul> -->
 
         <!-- <p>Transfer Bank (Verifikasi Manual)</p>
 
