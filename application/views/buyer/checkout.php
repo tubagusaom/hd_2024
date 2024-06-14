@@ -17,7 +17,7 @@
 <!-- <div id="mobile-menu-overlay"></div> -->
 
 <div role="main" class="main">
-  <div class="checkout" style="padding-bottom: 150px">
+  <div class="checkout" style="padding-bottom: 500px">
     <div class="container container-product">
       <h1 class="h2 heading-primary mt-lg mb-md clearfix">
         Checkout
@@ -118,7 +118,7 @@
           </div>
         </div>
 
-        <form id="formCheckout" class="" action="<?=base_url()?>buyer/transaksi" method="post">
+        <form id="formCheckout" class="" action="<?=base_url()?>buyer/bayar_x" method="post">
         <div class="col-md-4">
           <div class="form-col">
 

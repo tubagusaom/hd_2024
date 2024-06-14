@@ -15,6 +15,7 @@ class Buyer extends MY_Controller {
         $this->load->library('curl');
 
         $this->load->library('xendit');
+        $this->load->library('netzme');
     }
 
     function index(){
@@ -396,6 +397,124 @@ class Buyer extends MY_Controller {
       $this->load->view('templates/bootstraps/bottom',$data);
     }
 
+    function bayar_x() {
+
+      $test = $this->netzme->testnetzme();
+
+      // var_dump($test); die();
+    }
+
+    function bayar() {
+      $data['aplikasi'] = $this->db->get('r_konfigurasi_aplikasi')->row();
+
+      $data['jenis_user'] = $this->auth->get_user_data()->jenis_user;
+      $data['nama_user'] = $this->auth->get_user_data()->nama;
+      $data['id_user'] = $this->auth->get_user_data()->id;
+      $data['id_member'] = $this->auth->get_user_data()->id_member;
+      $id_member = $data['id_member'];
+
+      $nm_penerima      = $this->input->post('nm_penerima');
+      $tlp_penerima     = $this->input->post('tlp_penerima');
+      $metodeatm        = $this->input->post('metodeatm');
+
+      // $id = '61dba0151654fd7230461938';
+      $external_id = $nm_penerima.'-'.$tlp_penerima;
+      $bank_code = $metodeatm;
+      $name = $nm_penerima;
+      //
+      $va = $this->xendit->createCallbackVirtualAccount($external_id, $bank_code, $name);
+
+      $virtual_id = $va['id'];
+      $virtual_account = $va['account_number'];
+
+      // id_keranjang
+      $id_keranjang     = $this->input->post('id_keranjang');
+      $id_toko          = $this->input->post('id_toko');
+      $id_buyer         = $this->input->post('id_buyer');
+      $id_kurir_kirim   = $this->input->post('id_kurir_kirim');
+      $total_transaksi  = $this->input->post('jumlah_bayar');
+
+      $nmbank_pengirim  = $this->input->post('nmbank_pengirim');
+      $norek_pengirim   = $this->input->post('norek_pengirim');
+      $nmrek_pengirim   = $this->input->post('nmrek_pengirim');
+
+      $nmbank_tujuan    = $bank_code;
+      $norek_tujuan     = $virtual_account;
+      $nmrek_tujuan     = $bank_code.' Virtual Account';
+
+      // var_dump($id_keranjang); die();
+
+      date_default_timezone_set("Asia/jakarta");
+
+      // foreach ($id_keranjang as $key => $keranjangid) {
+
+        $data_transaksi = array(
+            // 'id_keranjang' => $keranjangid,
+            'nmbank_pengirim' => $nmbank_pengirim,
+            'norek_pengirim' => $norek_pengirim,
+            'nmrek_pengirim' => $nmrek_pengirim,
+            'id_virtual' => $virtual_id,
+            'nmbank_tujuan' => $nmbank_tujuan,
+            'norek_tujuan' => $norek_tujuan,
+            'nmrek_tujuan' => $nmrek_tujuan,
+            'total_transaksi' => $total_transaksi,
+            'stts_transaksi' => '0',
+            'created_by' => $this->id,
+            'created_when' => date("Y-m-d H:i:s"),
+        );
+        // $this->db->insert(kode_tbl().'transaksi_buyer', $data_transaksi);
+
+        if ($this->db->insert(kode_tbl().'transaksi_buyer', $data_transaksi)) {
+
+          $id_transaksi = $this->db->insert_id();
+
+
+          // update kurir pengiriman
+          $data_update_kurir = array(
+              // 'id_transaksi' => '999',
+              'id_transaksi' => $id_transaksi,
+              'status_pengiriman' => '1',
+              'updated_by' => $this->id,
+              'updated_when' => date("Y-m-d H:i:s"),
+          );
+          $this->db->where_in('id_keranjang', $id_keranjang);
+          // $this->db->where('status_pengiriman', '0');
+          $this->db->update(kode_tbl().'kurir_pengiriman_buyer', $data_update_kurir);
+
+          // update keranjang
+          $data_update_keranjang = array(
+              // 'id_transaksi' => '999',
+              'id_transaksi' => $id_transaksi,
+              'stts_keranjang' => '1',
+              'updated_by' => $this->id,
+              'updated_when' => date("Y-m-d H:i:s"),
+          );
+          $this->db->where_in('id', $id_keranjang);
+          $this->db->update(kode_tbl().'product_keranjang', $data_update_keranjang);
+
+          // var_dump($data['id_kp_buyer']); die();
+          // var_dump($id_keranjang); die();
+
+          $this->session->set_flashdata('result', '<b> Transaksi Berhasil. segera lakukan pembayaran ke rek '.$metodeatm.' Virtual Account. </b> ');
+          $this->session->set_flashdata('mode_alert', 'success');
+
+          $this->session->set_flashdata('text_result', 'Nomor Virtual Account : <b> '.$virtual_account.' </b> ');
+          $this->session->set_flashdata('count_result', 'Total Pembayaran : <b> '.$total_transaksi.' </b> ');
+
+          redirect('welcome/sukses_pembayaran');
+        }else {
+
+          $this->session->set_flashdata('result', 'Transaksi Gagal. Ada kesalahan dalam pengisian database. <a href="'.$base_url("buyer/keranjang").'">Lihat Keranjang</a>.');
+          $this->session->set_flashdata('mode_alert', 'warning');
+
+          $this->session->set_flashdata('text_result', '');
+          $this->session->set_flashdata('count_result', '');
+
+          redirect('welcome/sukses_pembayaran');
+
+        }
+    }
+
     function transaksi(){
 
       $data['aplikasi'] = $this->db->get('r_konfigurasi_aplikasi')->row();
@@ -432,10 +551,6 @@ class Buyer extends MY_Controller {
       // foreach ($keranjang_get_member as $key => $get_keranjang) {
       //   $data['total_keranjang'] += $get_keranjang->jumlah_product;
       // }
-
-
-
-
 
       $nm_penerima      = $this->input->post('nm_penerima');
       $tlp_penerima     = $this->input->post('tlp_penerima');
@@ -526,7 +641,6 @@ class Buyer extends MY_Controller {
 
           // var_dump($data['jumlah_terjual']); die();
           // var_dump($keranjang); die();
-
 
 
           // update kurir pengiriman
