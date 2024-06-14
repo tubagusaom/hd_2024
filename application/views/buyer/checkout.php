@@ -17,7 +17,7 @@
 <!-- <div id="mobile-menu-overlay"></div> -->
 
 <div role="main" class="main">
-  <div class="checkout">
+  <div class="checkout" style="padding-bottom: 150px">
     <div class="container container-product">
       <h1 class="h2 heading-primary mt-lg mb-md clearfix">
         Checkout
@@ -319,7 +319,8 @@
           </div>
 
           <div class="checkout-review-action">
-            <a href="#" id="pilihPembayaran" class="btn btn-primary btn-block" data-toggle="modal" data-target=".shop-pembayaran-modal">Pilih Pembayaran</a>
+            <!-- <a href="#" id="pilihPembayaran" class="btn btn-primary btn-block" data-toggle="modal" data-target=".shop-pembayaran-modal">Pilih Pembayaran</a> -->
+            <input id="pilihPembayaran" type="submit" class="btn btn-primary btn-block" data-toggle="modal" data-target=".shop-pembayaran-modal" value="Pilih Pembayaran">
             <!-- <input id="pilihPembayaran" type="submit" class="btn btn-primary btn-block" name="" data-toggle="modal" data-target=".shop-pembayaran-modal" value="Pesan sekarang"> -->
             <!-- <button id="pilihPembayaran" type="submit" class="btn btn-primary btn-block" name="button" data-toggle="modal" data-target=".shop-pembayaran-modal">Pilih Pembayaran</button> -->
             <!-- <button id="pilihPembayaran" type="submit" class="btn btn-primary btn-block" name="button" data-toggle="modal" data-target="">Pilih Pembayaran</button> -->
@@ -428,6 +429,8 @@
 
   var baseUrl = '<?=base_url()?>';
 
+  $("#pilihPembayaran").prop("disabled", true);
+
   $("#id_pengiriman").select2({
         placeholder: "Cari Pengiriman",
         allowClear: true
@@ -531,15 +534,15 @@
                 estimasi = field.costs[i].cost[j].etd.substr(0, 1) + " Hari";
               }
 
-              x +="<td tarcour='"+cour+"' tarest='"+ests+"' tariflyn='"+tarifok+"' tarim='"+idmember+"' tarib='"+idbuyer+"' tarikr='"+id_keranjang+"' style='font-size:10px'><b>" + field.costs[i].service + "</b> <br>";
+              x +="<td id='"+cour+"' tarcour='"+cour+"' tarest='"+ests+"' tariflyn='"+tarifok+"' tarim='"+idmember+"' tarib='"+idbuyer+"' tarikr='"+id_keranjang+"' style='font-size:10px'><b>" + field.costs[i].service + "</b> <br>";
               x +="<font style='font-size:9px'>"+(field.costs[i].description)+"</font></td>";
 
               // tarifok = field.costs[i].cost[j].value;
               // var inongk = "intOngkir_"+idmember;
 
               // x =+"<div>";
-              x +="<td tarcour='"+cour+"' tarest='"+ests+"' tariflyn='"+tarifok+"' tarim='"+idmember+"' tarib='"+idbuyer+"' tarikr='"+id_keranjang+"' style='font-size:12px'>"+ formatRupiah(tarifok) +"</td>";
-              x +="<td tarcour='"+cour+"' tarest='"+ests+"' tariflyn='"+tarifok+"' tarim='"+idmember+"' tarib='"+idbuyer+"' tarikr='"+id_keranjang+"' style='font-size:12px'>"+ estimasi +"</td>";
+              x +="<td id='"+cour+"' tarcour='"+cour+"' tarest='"+ests+"' tariflyn='"+tarifok+"' tarim='"+idmember+"' tarib='"+idbuyer+"' tarikr='"+id_keranjang+"' style='font-size:12px'>"+ formatRupiah(tarifok) +"</td>";
+              x +="<td id='"+cour+"' tarcour='"+cour+"' tarest='"+ests+"' tariflyn='"+tarifok+"' tarim='"+idmember+"' tarib='"+idbuyer+"' tarikr='"+id_keranjang+"' style='font-size:12px'>"+ estimasi +"</td>";
               // x =+"</div>";
               // x +="<div>xxx</div>";
 
@@ -598,7 +601,7 @@
     $("#jumlahBayar1").html('Rp. ' +formatRupiah(parseInt(totalHarga)+parseInt(tarifharga)));
     // $("#valtOngKir").attr ("attr-"+tarifidmem ,tarifharga);
 
-
+    $("#pilihPembayaran").prop("disabled", false);
 
 
     var toUrl = "buyer/update_kurir/"+tarifidkeranjang+"/"+tarifidmem+"/"+tarifidbuyer+"/"+tarifkurir+"/"+tarifestimasi+"/"+tarifharga;
@@ -615,6 +618,8 @@
       }
     });
     return false;
+
+    
 
     // alert(acuanidmval);
   });

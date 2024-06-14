@@ -225,7 +225,7 @@
                     <!-- <button class="btn btn-default hover-primary btn-update">Update Shopping Cart</button>
                     <button class="btn btn-default hover-primary btn-clear">Clear Shopping Cart</button> -->
 
-                    <input id="lanjut_pembelian" type="submit" class="btn btn-primary btn-block" value="lanjutkan pembelian">
+                    <!-- <input id="lanjut_pembelian" type="submit" class="btn btn-primary btn-block" value="lanjutkan pembelian"> -->
                   </td>
                 </tr>
               </tfoot>
@@ -263,6 +263,13 @@
               <div class="totals-table-action">
                 <!-- <input id="lanjut_pembelian" type="submit" class="btn btn-primary btn-block" value="lanjutkan pembelian"> -->
                 <a href="<?=base_url()?>home" class="btn btn-default hover-primary btn-continue btn-block">Belanja Lagi</a>
+              </div>
+            </div>
+
+            <div class="panel panel-default">
+              <div class="totals-table-action">
+                <input id="lanjut_pembelian" type="submit" class="btn btn-primary btn-block" value="lanjutkan pembelian">
+              </div>
               </div>
             </div>
 

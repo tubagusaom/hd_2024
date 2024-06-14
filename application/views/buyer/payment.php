@@ -194,7 +194,7 @@ $(document).ready(function(){
   ketmetode += "Silahkan lakukan pembayaran ke";
   ketmetode += "<p class='mb-0'><b>Homedepo QRIS</b></p>";
 
-  ketmetode += "<p class='mb-0'>Klik <font style='color:red'> Bayar </font> untuk mendapatkan kode QRIS</p>";
+  ketmetode += "<p class='mb-0'>Klik <font style='color:red'> Bayar </font> untuk mendapatkan QRIS</p>";
 
 
   $("#metodeBayar").html(ketmetode);
