@@ -90,6 +90,7 @@
 
             $headers = array();
             // $headers[] = 'Content-Type : application/json';
+            $headers['Content-Type'] = 'application/json';
             $headers['X-TIMESTAMP'] = '2024-06-15T00:00:00+12:39';
             $headers['X-CLIENT-KEY'] = $this->_partner_id;
             $headers['Private_Key'] = $this->private_key;
@@ -97,9 +98,9 @@
 
             $end_point = $this->server_domain.'v1/utilities/signature-auth';
 
-            $data['X-TIMESTAMP'] = '2024-06-16T00:00:00+12:39';
-            $data['X-CLIENT-KEY'] = $this->_partner_id;
-            $data['Private_Key'] = $this->private_key;
+            // $data['X-TIMESTAMP'] = '2024-06-16T00:00:00+12:39';
+            // $data['X-CLIENT-KEY'] = $this->_partner_id;
+            // $data['Private_Key'] = $this->private_key;
             // $data['Private_Key'] = $this->private_key;
 
             $payload = json_encode($data);
