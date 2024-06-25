@@ -399,7 +399,9 @@ class Buyer extends MY_Controller {
 
     function bayar_x() {
 
-      $test = $this->netzme->testnetzme();
+      // $_SERVER["REQUEST_METHOD"] == "POST";
+
+      $test = $this->netzme->generate_auth_signature();
 
       // var_dump($test); die();
     }
