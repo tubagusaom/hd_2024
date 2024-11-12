@@ -152,7 +152,7 @@
             <div class="tab-content">
               <div class="tab-pane fade show active" id="tabs-2-1">
                 <div class="entry-video embed-responsive embed-responsive-16by9">
-                  <iframe width="886" height="668" src="//www.youtube.com/embed/zraegy4MqRA?si=B4hJCSfjI4x28sx6" allowfullscreen=""></iframe>
+                  <iframe width="886" height="668" src="//www.youtube.com/embed/yNKvkPJl-tg?si=gJcpSy9VipgkKhIG" allowfullscreen=""></iframe>
                 </div>
               </div>
               <div class="tab-pane fade" id="tabs-2-2">
