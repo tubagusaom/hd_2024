@@ -183,7 +183,7 @@
                     <div class="nav-video">
                       <figure class="nav-video-figure"><img src="images/video-01-140x81.jpg" alt="" width="140" height="40"/>
                       </figure>
-                      <h6 class="nav-video-title">Achmad Widjaya - Issues Gas National</h6>
+                      <h6 class="nav-video-title">TV One</h6>
                     </div></a></li>
                 <li class="nav-item" role="presentation"><a class="nav-link" href="#tabs-2-2" data-toggle="tab">
                     <div class="nav-video">
