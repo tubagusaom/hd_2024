@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="wide wow-animation" lang="en">
   <head>
-    <title>Streaming TV</title>
+    <title>Mitra One TV</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -41,7 +41,7 @@
                     <!--Brand-->
                     <a class="brand" href="">
                       <!-- <img src="images/logo-default-296x52.png" alt="" width="148" height="26"/> -->
-                      TeraBytee TV
+                      MitraOne TV
                     </a>
                   </div>
                 </div>
@@ -152,27 +152,27 @@
             <div class="tab-content">
               <div class="tab-pane fade show active" id="tabs-2-1">
                 <div class="entry-video embed-responsive embed-responsive-16by9">
-                  <iframe width="886" height="668" src="//www.youtube.com/embed/4gRjnaitguQ" allowfullscreen=""></iframe>
+                  <iframe width="886" height="668" src="//www.youtube.com/embed/zraegy4MqRA?si=B4hJCSfjI4x28sx6" allowfullscreen=""></iframe>
                 </div>
               </div>
               <div class="tab-pane fade" id="tabs-2-2">
                 <div class="entry-video embed-responsive embed-responsive-16by9">
-                  <iframe width="886" height="668" src="//www.youtube.com/embed/mfMR-URQl80" allowfullscreen=""></iframe>
+                  <iframe width="886" height="668" src="//www.youtube.com/embed/-f6TJnoWAQo?si=shnFSKL_UJm7_ssC" allowfullscreen=""></iframe>
                 </div>
               </div>
               <div class="tab-pane fade" id="tabs-2-3">
                 <div class="entry-video embed-responsive embed-responsive-16by9">
-                  <iframe width="886" height="668" src="//www.youtube.com/embed/xweHsBLcqp4" allowfullscreen=""></iframe>
+                  <iframe width="886" height="668" src="//www.youtube.com/embed/CeegDDDyzPI?si=bn5Z43yPWibq70U4" allowfullscreen=""></iframe>
                 </div>
               </div>
               <div class="tab-pane fade" id="tabs-2-4">
                 <div class="entry-video embed-responsive embed-responsive-16by9">
-                  <iframe width="886" height="668" src="//www.youtube.com/embed/V3pPMUmIxAc" allowfullscreen=""></iframe>
+                  <iframe width="886" height="668" src="//www.youtube.com/embed/7ONfxObUIOU?si=hOqiKCOtnKBeZ4nU" allowfullscreen=""></iframe>
                 </div>
               </div>
               <div class="tab-pane fade" id="tabs-2-5">
                 <div class="entry-video embed-responsive embed-responsive-16by9">
-                  <iframe width="886" height="668" src="//www.youtube.com/embed/N1DEOCUujUg" allowfullscreen=""></iframe>
+                  <iframe width="886" height="668" src="//www.youtube.com/embed/NtsMB1YHvIQ?si=GY6gXY9N3bbp2hnN" allowfullscreen=""></iframe>
                 </div>
               </div>
             </div>
@@ -183,31 +183,31 @@
                     <div class="nav-video">
                       <figure class="nav-video-figure"><img src="images/video-01-140x81.jpg" alt="" width="140" height="40"/>
                       </figure>
-                      <h6 class="nav-video-title">Armin van Buuren Live at Tomorrowland 2015</h6>
+                      <h6 class="nav-video-title">Achmad Widjaya - Issues Gas National</h6>
                     </div></a></li>
                 <li class="nav-item" role="presentation"><a class="nav-link" href="#tabs-2-2" data-toggle="tab">
                     <div class="nav-video">
                       <figure class="nav-video-figure"><img src="images/video-02-140x81.jpg" alt="" width="140" height="40"/>
                       </figure>
-                      <h6 class="nav-video-title">Juicy M - Live at MEO Sudoeste Festival</h6>
+                      <h6 class="nav-video-title">Achmad Widjaya - Polemik harga gas Industry/h6>
                     </div></a></li>
                 <li class="nav-item" role="presentation"><a class="nav-link" href="#tabs-2-3" data-toggle="tab">
                     <div class="nav-video">
                       <figure class="nav-video-figure"><img src="images/video-03-140x81.jpg" alt="" width="140" height="40"/>
                       </figure>
-                      <h6 class="nav-video-title">Armin van Buuren feat. Angel Taylor - Make It Right</h6>
+                      <h6 class="nav-video-title">Achmad Widjaya - Energy Security for Industry</h6>
                     </div></a></li>
                 <li class="nav-item" role="presentation"><a class="nav-link" href="#tabs-2-4" data-toggle="tab">
                     <div class="nav-video">
                       <figure class="nav-video-figure"><img src="images/video-04-140x81.jpg" alt="" width="140" height="40"/>
                       </figure>
-                      <h6 class="nav-video-title">Armin Only crew taking over Sydney! Armin Only VLOG</h6>
+                      <h6 class="nav-video-title">Slank - Aktor Intelektual</h6>
                     </div></a></li>
                 <li class="nav-item" role="presentation"><a class="nav-link" href="#tabs-2-5" data-toggle="tab">
                     <div class="nav-video">
                       <figure class="nav-video-figure"><img src="images/video-05-140x81.jpg" alt="" width="140" height="40"/>
                       </figure>
-                      <h6 class="nav-video-title">Armin Only crew taking over San Francisco!</h6>
+                      <h6 class="nav-video-title">Slank - Full Moon Blues</h6>
                     </div></a></li>
               </ul>
             </div>
